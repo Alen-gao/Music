@@ -1,12 +1,12 @@
 {
   "name":"Music",
   "main":"index.html",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private":  true,
   "window": {
     "title": "node-webkit demo",
     "icon": "link.png",
-    "toolbar": true,
+    "toolbar": false,
     "frame": false,
     "width": 990,
     "height": 620,
