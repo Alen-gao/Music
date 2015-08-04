@@ -1,0 +1,470 @@
+/************************
+	公用样式
+************************/
+html,body{height: 100%;width: 100%;}
+body{font-family: "微软雅黑"; background: url(../images/back.jpg) no-repeat;-webkit-user-select: none; overflow: hidden;}
+*{padding: 0; margin:0;box-sizing: border-box; list-style: none;font-family: "微软雅黑";}
+.herCom{width: 100%;height: 40px;position: absolute;left: 0;z-index: 100;}
+@font-face{font-family:'KaufmannBTRegular';src:url('http://26.nbpal.com/images/KaufmannBTRegular.eot');src:local('KaufmannBTRegular'),local('KaufmannBTRegular'),url('http://26.nbpal.com/images/KaufmannBTRegular.woff') format('woff'),url('http://26.nbpal.com/images/KaufmannBTRegular.ttf') format('truetype'),url('http://26.nbpal.com/images/KaufmannBTRegular.svg#KaufmannBTRegular') format('svg');}
+.line:after{content: '';position: absolute;left:0;width: 100%;height: 1px;display: block;background-color: #3F3F51;z-index: 2000;}
+.line:before{content: '';position: absolute;left:0;width: 100%;height: 1px;display: block;background-color: #313141;z-index: 2000;}
+.fl{float: left;}
+.fr{float: right;}
+::-webkit-scrollbar{width: 10px;height:10px;}
+::-webkit-scrollbar-track{-webkit-box-shadow: 2px 0 2px rgba(0,0,0,0.2);background-color: #20202e;}
+::-webkit-scrollbar-thumb{-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);background: rgba(0,0,0,0.2);}
+::-webkit-scrollbar-thumb:hover{-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);background: rgba(0,0,0,0.4);}
+.dis{display: inline-block;}
+.hover{background-color: #;}
+.buttom{width: 90px;height: 24px;line-height: 24px;background-color: #252533;border-radius: 5px;box-shadow: 0px 0px 2px #3c3c4b;}
+/************************
+	播放器布局样式
+************************/
+header{
+	top: 0;
+	background-color: #292939;
+}
+header>h3,.add-music{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #13131a;
+	position: relative;
+}
+header>h3{
+	color: #62627a;
+	text-align: center;
+	position: relative;
+	-webkit-app-region: drag;
+	text-shadow: 1px 1px 0 #1d1d27;
+}
+header .operation{
+	padding-left: 30px;
+	width: 160px;
+	height: 50px;
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: 3000;
+	-webkit-app-region: no-drag;
+}
+.operation a{
+	float: right;
+	width: 43px;
+	height: 30px;
+	text-align: center;
+	font-size: 20px;
+	color: #FFF;
+	line-height: 30px;
+	text-decoration: none;
+	-webkit-transition:all 0.2s; 
+}
+.operation a:hover{
+	background-color: #00a3e2;
+}
+.operation a:nth-child(1):hover{
+	background-color: #f45046;
+}
+.bottomLine:after{
+	/*bottom: -3px;*/
+}
+.bottomLine:before{
+	bottom: 0;
+}
+.tab{
+	width: 100%;
+	height: 60px;
+}
+.main{
+	width: 100%;
+	height: 100%;
+	padding-top: 40px;
+	padding-bottom: 80px;
+	position: relative;
+}
+.left{
+	width: 260px;
+	height: 100%;
+	float: left;
+	background-color: #292938;
+	border-top: 1px solid #13131a;
+	position: relative;
+}
+
+.submit{
+	width: 90px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	height: 30px;
+	z-index: 100;
+	cursor: pointer;
+	outline: none;
+	
+
+}
+.backHome{
+	width: 90px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	height: 30px;
+	z-index: 200;
+	cursor: pointer;
+}
+.submit:after, .backHome:after{
+	content: '添加音乐';
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	font-size: 14px;
+	width: 90px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	border: 1px solid #3c3c4b;
+	background-color: #262635;
+	font-weight: normal;
+	text-align: center;
+	color: #FFF;
+	cursor: pointer;
+	-webkit-transition: all 0.4s;
+}
+.backHome:after{
+	content: '音乐首页';
+}
+.submit:hover:after, .backHome:hover:after{
+	background-color: #00a3e2;
+}
+.left:after{
+	top: 0;
+}
+.left:before{
+	top: -3px;
+}
+.add-music{
+	width: 260px;
+	height: 50px;
+	border-bottom: 1px solid #3c3c4b;
+	position: fixed;
+	background-color: #313141;
+	z-index: 200;
+}
+.add-music .add{
+	margin-top: 10px;
+	margin-left: 10px;
+	height: 30px;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	color: #FFF;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+}
+.left .music-list{
+	height: 100%;
+	max-height: 100%;
+	overflow-y: scroll;
+	padding-bottom: 15px;
+	border-top: 60px solid #222230;
+}
+.left .music-list div{
+	width: 100%;
+	padding: 2px 10px;
+	padding-right: 80px;
+	height: 30px;
+	line-height: 30px;
+	color: #7d7d7d;
+	overflow: hidden;
+	font-size: 12px;
+	position: relative;
+	cursor: pointer;
+	-webkit-transition: all 0.5s;
+}
+.left .music-list div:hover{
+	background-color: #2c2c3b;
+}
+.left .music-list div.hover{
+	background-color: #313142;
+}
+.left span.time{
+	position: absolute;
+	right: 5px;
+}
+.left .bottomLine{
+	width: 260px;
+	display: block;
+	position: absolute;
+	bottom: 1px;
+	height: 10px;
+	z-index: 2000;
+	background-color: #222230;
+}
+.left .bottomLine:before {
+  bottom: -1px;
+}
+.left .bottomLine:after {
+  bottom: -1px;
+}
+.right{
+	padding-left: 260px;
+	width: 100%;
+	height: 100%;
+	background-color: #e4e4ef;
+}
+footer{
+	padding: 10px 20px;
+    height: 80px !important;
+    bottom: 0;
+    background-color: #323241;
+}
+.phonograph{
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	margin-right: 30px;
+	background:url(../images/phonograph.png) no-repeat;
+	background-size: 60px; 
+	display: inline-block;
+	float: left;
+}
+.rotation{
+	-webkit-animation: move linear 8s 0s infinite;
+}
+@-webkit-keyframes move{
+  0%{
+    -webkit-transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(360deg);
+  }
+}
+.song-name,.audio-progress{
+	display: block;
+	height: 20px;
+	font-size: 14px;
+	color: #6a6a75;
+}
+.song-name span{
+	text-indent: 10px;
+	color: #e4e4ef;
+	display: inline-block;
+}
+.audio-progress{
+	padding-top: 10px;
+	height: 40px;
+}
+.audio-progress span, .loadSong .fr span{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	margin-right: 10px;
+	display: inline-block;
+	background-image: url(../images/icon.png);
+  	vertical-align: middle;
+}
+.audio-progress p{
+	display: inline-block;
+}
+.audio-progress .last{
+	background-position: -37px -10px;
+}
+.audio-progress .Pause{
+	background-position: -158px -11px;
+}
+.audio-progress .play{
+	background-position: -98px -12px;
+}
+.audio-progress .next{
+	background-position: -225px -10px;
+}
+.audio-progress .time{
+	margin-left: 8px;
+    width: 53px;
+    background-image: none;
+}
+.audio-progress .change{
+	margin-left: 10px;
+	background-position: -37px -61px;
+}
+.audio-progress .progress-bar, .audio-progress .volume{
+	width: 430px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #e4e4ef;
+	margin-top: 7px;
+    vertical-align: top;
+    position: relative;
+    cursor: pointer;
+}
+.audio-progress .progress, .audio-progress .volume .soundBack{
+	width: 0px;
+	height: 10px;
+	border: 1px solid #09b3f5;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background-color: #00a3e2;
+    position: absolute;
+    cursor: inherit;
+    left: 0;
+    top: 0;
+}
+.audio-progress .radius,.audio-progress .volume .sound{
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	border-radius: 16px;
+	position: absolute;
+	left: -10px;
+	top: -3px;
+	z-index: 1000;
+	box-shadow: 0 0 2px #000;
+	background-color: #e4e4ef;
+}
+.audio-progress .volume{
+	position: relative;
+	width: 100px;
+}
+.audio-progress .mute{
+	display: inline-block;
+	background-position: -159px -63px;
+}
+.audio-progress .volume .progress {
+	width: 60px;
+}
+.audio-progress .volume .radius{
+	left: 50px;
+}
+/***** right style srart *****/
+.search{
+	width: 100%;
+	padding: 10px 30px;
+	height: 50px;
+	border-bottom: 1px solid #3c3c4b;
+	background-color: #313141;
+	position: relative;
+}
+.search:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #3f3f51;
+  z-index: 2000;
+}
+.search:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  display: block;
+  background-color: #3c3c4b;
+  z-index: 2000;
+}
+.search input[type="text"]{
+	width: 100%;
+	height: 30px;
+	padding: 2px 10px;
+	background-color: #252533;
+	border: 1px solid #13131a;
+	border-radius: 5px;
+	color: #a9a9a9;
+	outline:none;
+	-webkit-transition: all .5s;
+}
+.search input[type="text"]:hover{
+	box-shadow: 0 0 4px #171721;
+}
+.loadSong{
+	width: 100%;
+	max-height: 100%;
+	overflow-y: scroll;
+	padding: 10px 0;
+}
+.loadSong li{
+	width: 100%;
+	padding: 0 30px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #444;
+	border-bottom: 1px solid #d6d6e8; 
+}
+.loadSong .listenMusic{
+	background-position: -296px -10px;
+}
+.loadSong .addSong{
+	background-position: -296px -56px;
+}
+.loadSong .Download{
+	background-position: -355px -10px;
+}
+
+.album{
+	padding: 10px;
+	width: 100%;
+	padding-top: 20px;
+	max-height: 100%;
+	overflow-y:scroll; 
+	padding-bottom: 50px;
+}
+.album dd{
+	width: 124px;
+	height: 124px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	position: relative;
+}
+.album dd span{
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	-webkit-transition: all 0.5s;
+}
+.album dd a{
+	width: 40px;
+	height: 40px;
+	border: 3px solid #e4e4ef;
+	border-radius: 40px;
+	opacity: 0;
+	left: 50%;
+	top: 50%;
+	margin-left: -20px;
+	margin-top: -20px;
+	position: absolute;
+	text-decoration: none;
+	z-index: 11;
+	-webkit-transition: all 0.5s;
+}
+.album dd a:after{
+	content: '';
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 4px;
+	top: 6px;
+	cursor: pointer;
+	margin-right: 10px;
+	display: inline-block;
+	background-image: url(../images/icon.png);
+	background-position: -158px -11px;
+}
+.album dd:hover span{
+	opacity: 0.7;
+}
+.album dd:hover a{
+	opacity: 0.9;
+}

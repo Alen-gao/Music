@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>Music play</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<!-- header start -->
+<header class="herCom">
+	<h3 class="line bottomLine center">
+		Play Music
+	</h3>
+	<p class="operation">
+		<a id="close" href="#">×</a>
+		<a id="max" href="#">□</a>
+		<a id="reduction" style="display:none" href="#">□</a>
+		<a id="min" href="#">━</a>
+	</p>
+	<!-- <div class="tab"></div> -->
+</header>
+<!-- header end -->
+<!-- main start -->
+<div class="main">
+	<!-- left start -->
+	<div class="line left">
+		<h3 class="add-music">
+<!-- 			<div class="buttom add">添加音乐</div> -->
+			<input id="submit" class="submit" type="file" multiple />
+			<a id="backHome" class="backHome" href="#"></a>
+		</h3>
+
+		<div class="music-list">
+			
+			<!-- <div data-path="F:\KuGou\伤感 - 英雄的黎明 - 纯音乐 忧郁.mp3">伤感 - 英雄的黎明 - 纯音乐 忧郁</div>
+			<div data-path="F:\KuGou\风云 - 孤星独吟 - 配乐 D 二胡独奏曲 慢版.mp3">风云 - 孤星独吟 - 配乐 D 二胡独奏曲 慢版</div>
+			<div data-path="F:\KuGou\风云 - 孤星独吟.mp3">风云 - 孤星独吟</div>
+			<div data-path="F:\KuGou\S.E.N.S - 海之女神.mp3">S.E.N.S - 海之女神</div>
+			<div data-path="F:\KuGou\宫崎骏 - 天空之城.mp3">宫崎骏 - 天空之城</div>
+			<div data-path="F:\KuGou\久石譲 - Going Out.mp3">久石譲 - Going Out</div>
+			<div data-path="F:\KuGou\轻音乐 - My Soul.mp3">轻音乐 - My Soul</div>
+			<div data-path="F:\KuGou\原声带 - Floating Down The Stream.mp3">原声带 - Floating Down The Stream</div>
+			<div data-path="F:\KuGou\伤感 - 英雄的黎明 - 纯音乐 忧郁.mp3">伤感 - 英雄的黎明 - 纯音乐 忧郁.mp3</div>
+			<div data-path="F:\KuGou\风云 - 孤星独吟 - 配乐 D 二胡独奏曲 慢版.mp3">风云 - 孤星独吟 - 配乐 D 二胡独奏曲 慢版</div>
+			<div data-path="F:\KuGou\风云 - 孤星独吟.mp3">风云 - 孤星独吟</div>
+			<div data-path="F:\KuGou\S.E.N.S - 海之女神.mp3">S.E.N.S - 海之女神</div>
+			<div data-path="F:\KuGou\宫崎骏 - 天空之城.mp3">宫崎骏 - 天空之城</div>
+			<div data-path="F:\KuGou\久石譲 - Going Out.mp3">久石譲 - Going Out</div>
+			<div data-path="F:\KuGou\轻音乐 - My Soul.mp3">轻音乐 - My Soul</div>
+			<div data-path="F:\KuGou\原声带 - Floating Down The Stream.mp3">原声带 - Floating Down The Stream</div>
+			<div data-path="F:\KuGou\伤感 - 英雄的黎明 - 纯音乐 忧郁.mp3">伤感 - 英雄的黎明 - 纯音乐 忧郁</div>
+			<div data-path="F:\KuGou\风云 - 孤星独吟 - 配乐 D 二胡独奏曲 慢版.mp3">风云 - 孤星独吟 - 配乐 D 二胡独奏曲 慢版</div>
+			<div data-path="F:\KuGou\风云 - 孤星独吟.mp3">风云 - 孤星独吟</div>
+			<div data-path="F:\KuGou\S.E.N.S - 海之女神.mp3">S.E.N.S - 海之女神</div>
+			<div data-path="F:\KuGou\宫崎骏 - 天空之城.mp3">宫崎骏 - 天空之城</div>
+			<div data-path="F:\KuGou\久石譲 - Going Out.mp3">久石譲 - Going Out</div>
+			<div data-path="F:\KuGou\轻音乐 - My Soul.mp3">轻音乐 - My Soul</div>
+			<div data-path="F:\KuGou\原声带 - Floating Down The Stream.mp3">原声带 - Floating Down The Stream</div> -->
+		</div>
+		<!-- bottom line -->
+		<div class="line bottomLine"></div>
+		<!-- bottom line -->
+	</div>
+	<!-- left end -->
+	<!-- right start -->
+	<div class="right">
+		<div class="search">
+			<input id="searchSong" type="text" placeholder="您想听点什么音乐？"  />
+		</div>
+		<ul class="loadSong">
+			<!-- <li data-song="">
+				<div class="fl">
+					<span class="singer">周杰伦</span>
+					<span> - </span>
+					<span class="songname">世界末日</span>
+				</div>
+				<div class="fr">
+					<span class="listenMusic"></span>
+					<span class="addSong"></span>
+					<span class="Download"></span>
+				</div>
+				
+			</li>
+			<li data-song="">
+				<span class="singer">周杰伦</span>
+				<span> - </span>
+				<span class="songname">世界末日</span>
+			</li>
+			<li data-song="">
+				<span class="singer">周杰伦</span>
+				<span> - </span>
+				<span class="songname">世界末日</span>
+			</li>
+			<li data-song="">
+				<span class="singer">周杰伦</span>
+				<span> - </span>
+				<span class="songname">世界末日</span>
+			</li> -->
+		</ul>
+		<dl class="album">
+			<dd data-song="aosikajinqu">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/08.jpg" />
+			</dd>
+			<dd data-song="MichaelJackson">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/14.jpg" />
+			</dd>
+			<dd data-song="BackstreetBoys">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/12.jpg" />
+			</dd>
+			<dd data-song="westlife">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/24.jpg" />
+			</dd>
+			<dd data-song="MadonnaCiccone">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/25.jpg" />
+			</dd>
+			<dd data-song="Beyond">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/01.jpg" />
+			</dd>
+			<dd data-song="zhoujielun">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/02.jpg" />
+			</dd>
+			<dd data-song="liudehua">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/03.jpg" />
+			</dd>
+			<dd data-song="linjunjie">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/04.jpg" />
+			</dd>
+			<dd data-song="pushu">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/05.jpg" />
+			</dd>
+			<dd data-song="FIR">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/06.jpg" />
+			</dd>
+			<dd data-song="wangfeng">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/07.jpg" />
+			</dd>
+			<dd data-song="liuruoying">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/09.jpg" />
+			</dd>
+			<dd data-song="wangfei">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/10.jpg" />
+			</dd>
+			<dd data-song="zhangxinzhe">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/11.jpg" />
+			</dd>	
+			<dd data-song="lirunmin">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/13.jpg" />
+			</dd>
+			<dd data-song="xuwei">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/15.jpg" />
+			</dd>
+			<dd data-song="fenghuangchuanqi">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/16.jpg" />
+			</dd>
+			<dd data-song="hanlei">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/17.jpg" />
+			</dd>
+			<dd data-song="zhangguorong">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/18.jpg" />
+			</dd>
+			<dd data-song="jiushirang">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/19.jpg" />
+			</dd>
+			<dd data-song="yangjinlanze">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/20.jpg" />
+			</dd>
+			<dd data-song="chenyixun">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/21.jpg" />
+			</dd>
+			<dd data-song="xietingfeng">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/22.jpg" />
+			</dd>
+			<dd data-song="zhangxueyou">
+				<a href="#"></a>
+				<span></span>
+				<img src="images/23.jpg" />
+			</dd>
+		</dl>
+	</div>
+	<!-- right end -->
+</div>
+<!-- main end -->
+<!-- right start -->
+<footer class="herCom">
+	<!-- audio play dom start -->
+	<div class="audio">
+		<div class="phonograph"></div>
+		<div class="dis">
+			<div class="song-name"><span></span> <label class="palyTime">  </label></div>
+			<div class="audio-progress">
+				<span class="last"></span>
+				<span data-index=1 class="Pause"></span>
+				<span class="next"></span>
+				<p class="progress-bar">
+					<span class="progress"></span>
+					<span class="radius"></span>
+				</p>
+				
+				<span class="time">00:00</span>
+				<span class="change"></span>
+				<span data-mute=1 class="mute"></span>
+				<p class="volume">
+					
+					<span class="sound"></span>
+					<span class="soundBack"></span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- audio play dom end --> 
+
+	<audio id="audio"  >
+	  <source src="FloatingDownTheStream.mp3" type="audio/ogg">
+	  <source src="FloatingDownTheStream.mp3" type="audio/mpeg">
+	</audio>
+</footer>
+<!-- right end -->
+<script type="text/javascript" src="script/zepto.min.js"></script>
+<script type="text/javascript" src="script/websqlwrapper.js"></script>
+<script type="text/javascript" src="script/servers.js"></script>
+<script type="text/javascript" src="script/common.js"></script>	
+</body>
+
+</html>

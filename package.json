@@ -1,0 +1,31 @@
+{
+  "name":"Music",
+  "main":"index.html",
+  "version": "0.0.1",
+  "private":  true,
+  "window": {
+    "title": "node-webkit demo",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": false,
+    "width": 990,
+    "height": 620,
+    "position": "mouse"
+  },
+  "dependencies": {
+    "express": "~4.2.0",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "fs": "*",
+    "ejs": "~0.8.5",
+    "navcodec":"*",
+    "mongodb": "*",
+    "connect-mongo": "*"
+  },
+  "webkit": {
+     "plugin": true
+  }
+}
