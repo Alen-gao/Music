@@ -1,24 +1,10 @@
 {
   "name":"Music",
-  "main":"index.html",
+  "main":"main.js",
   "version": "0.0.2",
-  "private":  true,
-  "window": {
-    "title": "node-webkit demo",
-    "icon": "link.png",
-    "toolbar": false,
-    "frame": false,
-    "width": 990,
-    "height": 620,
-    "position": "mouse"
-  },
   "dependencies": {
     "nodegrass": "~0.0.3",
     "cheerio": "~0.19.0",
-    "fs": "~0.0.2"
-    
-  },
-  "webkit": {
-     "plugin": true
+    "lowdb": "~0.10.2"
   }
 }

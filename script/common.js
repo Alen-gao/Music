@@ -1,8 +1,9 @@
 var fs = require("fs");
 var nodegrass = require('nodegrass');
 var cheerio = require('cheerio');
-var gui = require('nw.gui');
-var win = gui.Window.get();	
+var low = require('lowdb');
+var db = low('db.json');
+var ipc = require('ipc');
 
 var chooser = document.getElementById('submit');
 var left = document.querySelector('.music-list');
@@ -25,18 +26,26 @@ function audioTime(path){
 }
 
 //将歌曲地址遍历到页面
-// database.add(function(data){
-// 	console.log(data);
-// });
+// db._.mixin({
+//   findAll: function(array) {
+//     return array
+//   }
+// })
+
+if(db('posts').clone()){
+	var json = db('posts').clone();
+	for (var i = 0; i < json.length; i++) {
+		var songUrl = json[i].url;
+		var songName = json[i].songName;
+		apendText(songName, songUrl);
+	};
+}
+
 function apendText(text,path, fn) {
 
 	var element = document.createElement('div');
-	// var span = document.createElement('span');
-	// span.className = 'time';
-	// span.innerText = Math.floor(parseInt(time)/60) + ' : ' + (parseInt(time)%60);
 	element.setAttribute('data-path', path);
 	element.appendChild(document.createTextNode(text));
-	// element.appendChild(span);
 	left.appendChild(element);
 	if(fn){
 		fn();
@@ -53,18 +62,21 @@ function apendText(text,path, fn) {
 	audio.volume=sound;
 
 	//关闭窗口
-	$(document).on('click', '#close', function(){
-		win.close();
-	}).on('click', '#max', function(){
-		win.maximize();
+	$(document).on('click', '#close', function(){	
+		ipc.sendSync('close');
+	});
+	$(document).on('click', '#max', function(){
 		$('#reduction').show();
 		$('#max').hide();
-	}).on('click', '#reduction', function(){
-		win.restore();
+		ipc.sendSync('maximize');
+	})
+	$(document).on('click', '#reduction', function(){
 		$('#reduction').hide();
 		$('#max').show();
-	}).on('click', '#min', function(){
-		win.minimize();
+		ipc.sendSync('restore');
+	})
+	$(document).on('click', '#min', function(){
+		ipc.sendSync('minimize');
 	});
 
 	//点击暂停按钮
@@ -280,19 +292,18 @@ function apendText(text,path, fn) {
 		var songName = author +' - '+ name;
 		console.log(songUrl +','+ songName);
 		apendText(songName, songUrl,function(){
-			database.Search(sid,function(){
-				
-				var obj = {
-					sid: sid,
-					name: name,
-					author: author,
-					url: songUrl
-				}
-				database.insert(obj, function(){
-					console.log("插入成功！");
-				});
-				
-			});
+			var obj = {
+				sid: sid,
+		    	songName: songName,
+		    	artistName: author,
+		    	url: songUrl
+			}
+			if(!db('posts').find(obj)){
+				db('posts').push(obj);
+			}
+			else{
+				console.log("歌曲已经添加！");
+			}
 		});
 	});
 
