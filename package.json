@@ -1,7 +1,7 @@
 {
   "name":"Music",
   "main":"main.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "nodegrass": "~0.0.3",
     "cheerio": "~0.19.0",

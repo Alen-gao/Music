@@ -97,7 +97,7 @@ function apendText(text,path, fn) {
 		
 	});
 
-	$(document).on('click', '.left div', function(){
+	$(document).on('dblclick', '.left div', function(){
 		index = parseInt($(this).index());
 		$('.music-list').find('div').siblings().removeClass('hover');
 		$(this).addClass('hover');
@@ -253,17 +253,19 @@ function apendText(text,path, fn) {
 	//判断音乐是否播放完毕
 	setInterval(function(){
 		if(audio.ended){
+			index++;
 			changeAudio(index);
+			$('.song-name').find('span').text($('.music-list').find('div').eq(index).text());
 		}
 	},100);
 
 	//切换歌曲函数函数
 	function changeAudio(num){
 		$('.music-list').find('div').siblings().removeClass('hover');
-		$('.music-list').find('div').eq(index).addClass('hover');
+		$('.music-list').find('div').eq(num).addClass('hover');
 		audio.src = $('.music-list').children('div').eq(num).attr('data-path');
+		console.log($('.music-list').children('div').eq(num).attr('data-path'));
 		audio.play();
-		index = num++;
 	}
 
 	//点击查找歌曲
