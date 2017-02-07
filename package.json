@@ -1,0 +1,11 @@
+{
+  "name": "Music",
+  "main": "main.js",
+  "version": "0.0.3",
+  "dependencies": {
+    "electron": "*",
+    "cheerio": "^0.22.0",
+    "lowdb": "^0.14.0",
+    "nodegrass": "^0.0.3"
+  }
+}
