@@ -15,5 +15,5 @@
 
 
 ##注意事项
-- npm install npm install electron-prebuilt 或者去 electron官网下载安装 electron，否则无法演示
+- npm install electron-prebuilt 或者去 electron官网下载安装 electron，否则无法演示
 - 音乐播放模式未做开发，不能选择单曲循环，列表循环等功能
